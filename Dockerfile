@@ -1,9 +1,9 @@
 FROM caddy:builder AS builder
 
+RUN GOARCH=arm/v7
+
 RUN xcaddy build \
     --with  github.com/caddy-dns/cloudflare
-
-ENV GOARCH=arm/v7
 
 FROM caddy:latest
 
